@@ -1,0 +1,4 @@
+Invoice <%= @invoice.id %>
+Amount: <%= @invoice.amount_usd %>
+
+<iframe src="https://coinbase.com/inline_payments/<%= @invoice.coinbase_button_code %>" style="width: 500px; height: 160px; border: none; box-shadow: 0 1px 3px rgba(0,0,0,0.25); overflow: hidden;" scrolling="no" allowtransparency="true" frameborder="0"></iframe>

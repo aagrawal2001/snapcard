@@ -1,0 +1,20 @@
+login: &login
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: 
+  password:
+  host: localhost
+
+development:
+  <<: *login
+  database: snapcard_development
+
+test:
+  <<: *login
+  database: snapcard_test
+
+production:
+  <<: *login
+  database: snapcard_development
+
