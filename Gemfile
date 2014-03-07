@@ -8,6 +8,8 @@ gem 'rails', '3.2.14'
 gem 'pg'
 gem 'coinbase'
 gem 'dotenv'
+gem 'httparty'
+gem 'json'
 
 group :development do
   require 'pry'

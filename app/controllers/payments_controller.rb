@@ -1,11 +1,9 @@
 class PaymentsController < ApplicationController
   def create
-    render text: '{}'
-    # @invoice = Invoice.find_by_token(params[:custom])
-    # return unless @invoice
-    
+    @invoice = Invoice.find_by_token(params[:token])
+    return if @invoice.expired?
+    @invoice.payments.create!(params.slice(:value, :transaction_hash))
+    render text: "*ok*"
   end
-
-
 
 end

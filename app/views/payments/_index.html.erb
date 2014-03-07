@@ -1,0 +1,24 @@
+<h1> Payments </h1>
+
+<table>
+  <thead>
+    <tr>
+    <td>Date</td>
+    <td>Amount</td>
+    <td>Hash</td>
+    </tr>
+  </thead>
+
+<tbody>
+
+<% payments.each do |p| %>
+  <tr>
+    <td><%= p.created_at %></td>
+    <td><%= p.value %></td>
+    <td><%= p.transaction_hash %></td>
+  </tr>  
+  <br/>
+<% end %>
+
+</tbody>
+</table>

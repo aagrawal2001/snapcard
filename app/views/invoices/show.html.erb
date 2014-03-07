@@ -1,4 +1,15 @@
 Invoice <%= @invoice.id %>
+<br/>
 Amount: <%= @invoice.amount_usd %>
+<br/>
 
-<iframe src="https://coinbase.com/inline_payments/<%= @invoice.coinbase_button_code %>" style="width: 500px; height: 160px; border: none; box-shadow: 0 1px 3px rgba(0,0,0,0.25); overflow: hidden;" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
+<% if @invoice.expired? %>
+  <b> Expired </b>
+<% else %>
+
+  To pay with bitcoin please send to: <%= @invoice.blockchain_address %>
+  <br/>
+  <img src="https://blockchain.info/qr?data=<%= @invoice.blockchain_address %>&size=200" />
+<% end %>
+
+<%= render partial: 'payments/index', locals: { payments: @invoice.payments } %>

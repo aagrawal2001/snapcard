@@ -36,4 +36,4 @@ Snapcard::Application.configure do
   config.assets.debug = true
 end
 
-Rails.application.routes.default_url_options[:host] = 'localhost'
+Rails.application.routes.default_url_options[:host] = 'https://370bd28c.ngrok.com'
